@@ -4,23 +4,15 @@ const int INF = 987654321;
 int n,k;
 int dp[10004], a[104];
 
-void go(int val, int cnt){
-    if(val <= 0) return;
-
-    for(int i=0; i<n; i++){
-        if(val - a[i] < 0 || dp[val-a[i]] < cnt+1) continue;
-
-        dp[val-a[i]] = cnt+1;
-        go(val - a[i], cnt+1);
-    }
-}
-
 void solve(){
     cin >> n >> k;
-    for(int i=0; i<n; i++) cin >> a[i];
-    for(int i=0; i<10001; i++) dp[i] = INF;
+    fill(dp,dp+10004,INF);
+    dp[0] = 0;
 
-    go(k,0);
+    for(int i=0; i<n; i++){
+        int temp; cin >> temp;
+        for(int j=temp; j<)
+    }
     cout << (dp[0]==INF ? -1 : dp[0]);
 }
 
@@ -30,3 +22,8 @@ int main(){
     solve();
     return 0;
 }
+
+
+// n가지 동전을 무한번(횟수 제한 없이) 사용 가능하다 -> dp를 아래에서부터..
+// n가지를 1개씩.. -> dp를 오른쪽부터
+// 
