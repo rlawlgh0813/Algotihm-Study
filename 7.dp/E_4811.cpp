@@ -9,7 +9,7 @@ ll go(int h, int w){
 
     if(h == 0) dp[h][w] = go(h+1, w-1);
     else dp[h][w] = go(h-1,w) + go(h+1, w-1);
-    
+
     return dp[h][w];
 }
 
@@ -28,3 +28,7 @@ int main(){
     solve();
     return 0;
 }
+
+// 30분 정도 걸림
+// 경우의 수는 더하기다!!
+// 상태값을 저장해야겠다는 아이디어를 얻었어야함.
