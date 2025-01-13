@@ -11,9 +11,9 @@ void solve(){
 
     for(int i=0; i<n; i++){
         int temp; cin >> temp;
-        for(int j=temp; j<)
+        for(int j=temp; j<=k; j++) dp[j] = min(dp[j], dp[j-temp]+1);
     }
-    cout << (dp[0]==INF ? -1 : dp[0]);
+    cout << (dp[k]==INF ? -1 : dp[k]);
 }
 
 int main(){
@@ -26,4 +26,3 @@ int main(){
 
 // n가지 동전을 무한번(횟수 제한 없이) 사용 가능하다 -> dp를 아래에서부터..
 // n가지를 1개씩.. -> dp를 오른쪽부터
-// 
